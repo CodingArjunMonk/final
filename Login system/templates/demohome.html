@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<html lang="en">
+<!-- divinectorweb.com -->
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CSS menu hover animation</title>
+    
+</head>
+<body>
+    <div class="container">
+        <ul class="menu-area">
+            <li><a href="/">Home</a></li>
+            <li><a href="#">About</a></li>
+            <li><a href="#">Services</a></li>
+            <li><a href="/login/">Login</a></li>                    
+            <li><a href="/register">Register</a></li>
+        </ul>
+    </div>
+    <div class="wrapper">
+		<span></span>
+		<span></span>
+		<span></span>
+		<span></span>
+		<span></span>
+		<span></span>
+		<span></span>
+		<span></span>
+		<span></span>
+		<span></span>
+</div>
+<div class="banner">
+	<div class="content">
+        </h2>
+	</div>
+</div>
+
+</div>
+</body>
+</html>
+
+
+<style>*{
+    margin: 0;  
+    padding: 0;
+    box-sizing: border-box; 
+    
+}
+body{
+    font-family: montserrat;
+    background: #222;
+    display: flex;
+    justify-content: start;
+    align-items: flex-start;
+    height: 100vh;
+}
+.menu-area{
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    flex-wrap: wrap;
+}
+.menu-area li{
+    display: inline-block;
+    list-style: none;
+    margin: 10px 20px;
+}
+.menu-area li a{
+    color: #fff;
+    text-decoration: none;
+    font-size: 40px;
+    font-weight: 500;
+    position: relative;
+    transition: all .6s ease-in;    
+}
+.menu-area li a:after{
+    content: '';
+    position: absolute;
+    width: 0;
+    height: 4px;
+    background: #fff;
+    left: 0;
+    bottom: -15px;
+    transition: 0.6s;
+}
+.menu-area li a:before{
+    content: '';
+    position: absolute;
+    width: 0;
+    height: 4px;
+    background: #fff;
+    right: 0;
+    top: -15px;
+    transition: 0.6s;
+}
+.menu-area li a:hover{
+    text-shadow: 0 0 10px rgba(233,85,99,1),
+	0 0 10px rgba(233,85,99,1);
+}
+.menu-area li a:hover:after{
+    width: 100%;
+    background: #fff;
+	box-shadow: 0 0 10px deepskyblue,
+	0 0 10px deepskyblue;
+}
+.menu-area li a:hover:before{
+    width: 100%;
+    background: #fff;
+	box-shadow: 0 0 10px deepskyblue,
+	0 0 10px deepskyblue;
+}
+</style>
+<style>
+    body{
+    background: radial-gradient(circle,#24246e,#06051f);
+    height: 100vh;
+}
+.wrapper span{
+    position: fixed;
+    top: -120px;
+    height: 50px;
+    width: 50px;
+    z-index: -1;
+    animation: animate 3s linear infinite;    
+}
+.wrapper span:nth-child(1){
+    left: 60px;
+    animation-delay:0.6s;
+    border: 5px solid cyan;
+}
+.wrapper span:nth-child(2){
+    left: 60%;
+    animation-delay: 3s;
+    width: 60px;
+    height: 60px;
+    background: #ff4293;
+}
+.wrapper span:nth-child(3){
+    left: 20%;
+    animation-delay: 2s;
+    border: 5px solid #fff;    
+}
+.wrapper span:nth-child(4){
+    left: 30%;
+    animation-delay: 5s;
+    width: 80px;
+    height: 80px;
+    background: #befb46;
+}
+.wrapper span:nth-child(5){
+    left: 40%;
+    animation-delay: 1s;
+    border: 5px solid #ff4293;
+}
+.wrapper span:nth-child(6){
+    left: 50%;
+    animation-delay: 7s;
+    border: 5px solid deepskyblue;
+}
+.wrapper span:nth-child(7){
+    left: 60%;
+    animation-delay: 6s;
+    width: 100px;
+    height: 100px;
+    background: #ffd59e;
+}
+.wrapper span:nth-child(8){
+    left: 70%;
+    animation-delay: 8s;
+    border: 5px solid #befb46;
+}
+.wrapper span:nth-child(9){
+    left: 80%;
+    animation-delay: 6s;
+    width: 90px;
+    height: 90px;
+    background: cyan;
+}
+.wrapper span:nth-child(10){
+    left: 90%;
+    animation-delay: 4s;
+    border: 5px solid #fff;    
+}
+.banner{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+.content h2{
+    -webkit-text-fill-color: #fff;
+    -webkit-text-stroke-width: 3px;
+    -webkit-text-stroke-color: #fff;
+    font-family: montserrat;
+    font-size: 80px;
+    text-transform: uppercase;
+    letter-spacing: 12px;
+    text-align: center;
+    line-height: 0.9;
+}
+.content h2 b{
+    -webkit-text-fill-color: transparent;
+    font-size: 65px;
+}
+@keyframes animate{
+    0%{
+        transform: translateY(0);
+        opacity: 1;
+    }
+    80%{
+        opacity: 0.7;
+    }
+    100%{
+        transform: translateY(800px) rotate(360deg);
+        opacity: 0;
+    }
+}
+
+</style>
