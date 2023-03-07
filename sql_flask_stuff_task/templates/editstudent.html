@@ -1,0 +1,35 @@
+{% extends 'baseh.html' %}
+
+{% block content %}
+<html>
+
+    <body>
+    <div class="alert alert-dark" role="alert">
+  Please click on the data you want to change and edit and then click submit!
+</div>
+        <table class="table table-striped table-hover" style="border: 2px solid black;" >
+            <thead>
+                <td>Name</td>
+                <td>Address</td>
+                <td>City</td>
+            </thead>
+            <form id="changes_form" action="{{ url_for( 'studentedited' ) }}" method="POST">
+            {% for row in rows %}
+            <tr>
+
+                    <input name="id_num" style="visibility: hidden;" value="{{ row['user_id'] }}">
+                    <td><input id="{{ row['user_id'] }}" style="color: black; background-color: transparent; border-color: transparent ;" type="text" , name= "name" value="{{ row['name']}}" ></td>
+                    <td><input id="{{ row['user_id'] }}" style="color: black; background-color: transparent; border-color: transparent;" type="text" , name= "addr" value="{{row['addr']}}" ></td>
+                    <td><input id="{{ row['user_id'] }}" style="color: black; background-color: transparent; border-color: transparent;" type="text" , name= "city" value='{{row["city"]}}' ></td>
+
+            </tr>
+            {% endfor %}
+            </form>
+        </table>
+        <input form="changes_form" type="submit" value = "Save Changes" /><br>
+
+
+
+    </body>
+</html>
+{% endblock %}

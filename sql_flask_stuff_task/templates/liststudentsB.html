@@ -1,0 +1,42 @@
+{% extends 'baseh.html' %}
+
+{% block content %}
+
+<div class="container-fluid">
+<div class="dropdown" data-bs-theme="dark">
+  <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButtonDark" data-bs-toggle="dropdown" aria-expanded="false">
+    Options
+  </button>
+  <ul class="dropdown-menu" aria-labelledby="dropdownMenuButtonDark">
+    <li><a class="dropdown-item active" href="/liststudentsB">Show Students in Birmingham</a></li>
+    <li><a class="dropdown-item" href="/liststudentsL">Show Students in London</a></li>
+      <li><a class="dropdown-item" href="/liststudentsS">Show Students in Solihull</a></li>
+    <li><hr class="dropdown-divider"></li>
+    <li><a class="dropdown-item" href="/liststudents">Reset</a></li>
+  </ul>
+</div>
+</div>
+
+<br>
+
+<html>
+    <body>
+
+        <table class="table table-striped" border = 2 >
+            <thead>
+                <td>Name</td>
+                <td>Address</td>
+                <td>City</td>
+            </thead>
+
+            {% for row in rows %}
+            <tr>
+                <td>{{row["name"]}}</td>
+                <td>{{row["addr"]}}</td>
+                <td> {{ row["city"]}}</td>
+            </tr>
+            {% endfor %}
+        </table>
+    </body>
+</html>
+{% endblock %}
